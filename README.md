@@ -1,3 +1,10 @@
+# Consideraciones iniciales!
+
+Se instala bootstrap y poppers (librería necesaria por bootstrap)
+Por otro lado se maneja una librería llamada React-Paginate (para facilitar la paginación)
+La estructura de components está dividida en 4 (Cards, Filters, Pagination, Search)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

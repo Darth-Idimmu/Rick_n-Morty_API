@@ -1,0 +1,9 @@
+.center {
+    width: 49%;
+    margin-right: 18.5%;
+}
+.form-control {
+    border: 1px solid #00b0c8;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
