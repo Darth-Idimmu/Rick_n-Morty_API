@@ -21,9 +21,9 @@ const Cards = ({ results }) => {
                     <div>
                         <img src={image} alt='' className='img img-fluid' style={{width: "100%"}} />
                         <div className='content' style={{ padding: "10px"}}>
-                            <div className='fs-4 fw-bold mb-4'><MdAccountBox />{name}</div>
+                            <div className='fs-4 fw-bold mb-4'><MdAccountBox className='mb-1' />{name}</div>
                             <div>
-                                <div className='fs-6'><MdLocationOn />Last location: {location.name}</div>
+                                <div className='fs-6'><MdLocationOn className='mb-1'/>Last location: {location.name}</div>
                             </div>
                             
                             {/* <div className='fs-5'>{location.name}</div> */}
@@ -33,16 +33,16 @@ const Cards = ({ results }) => {
                     {(() => {
                         if (status === "Dead") {
                             return (
-                                <div className='position-absolute badge rounded-pill bg-danger'><FaSkullCrossbones /> {status}</div>
+                                <div className='position-absolute badge rounded-pill bg-danger'><FaSkullCrossbones className='mb-1'/> {status}</div>
                             );
                         } else if (
                             status === "Alive") {
                             return (
-                                <div className='position-absolute badge rounded-pill bg-success'><FaRegSmile /> {status}</div>
+                                <div className='position-absolute badge rounded-pill bg-success'><FaRegSmile className='mb-1' /> {status}</div>
                             );
                         } else {
                             return (
-                                <div className='position-absolute badge rounded-pill bg-secondary'><FaRegEyeSlash /> {status}</div>
+                                <div className='position-absolute badge rounded-pill bg-secondary'><FaRegEyeSlash className='mb-1' /> {status}</div>
                             )
                         }
                     })()}

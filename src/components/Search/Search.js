@@ -17,7 +17,7 @@ const Search = ({ setSearch, setPageNumber }) => {
                     <button  type="button" className="btn btn-primary fs-4"
                         onClick={e => { e.preventDefault();
                         }}
-                        ><BsSearch /></button>
+                        ><BsSearch className='mb-1' /></button>
                 </div>
             </div>
         </div>

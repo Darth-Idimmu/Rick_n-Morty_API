@@ -6,53 +6,72 @@ import Filters from "./components/Filters/Filters"; // importe para filtros
 import Pagination from './components/Pagination/Pagination';
 import Search from './components/Search/Search';
 
+import fondo from './assets/images/RM_Background_Card.png'; //imagen de fondo de App
+
 function App() {
-  // variable de estado que nos permite cambiar entre páginas de la API ()
-  // variable y función, que arranca desde la pag1
-  let [pageNumber, setPageNumber] = useState(1);
+  // ------------------------ variables que permitirán estar en varias partes de la API para recibir info ----------------
+  let [pageNumber, setPageNumber] = useState(1); // variable y función, que arranca desde la pag1
   // console.log(pageNumber)
-  // función para la barra de búsqueda
-  let [search, setSearch] = useState("");
+  let [search, setSearch] = useState(""); // función para la barra de búsqueda
+  let [status, setStatus] = useState(""); // status se usa para filtro ALIVE
+  let [gender, setGender] = useState(""); // gender se usa para filtro Gender
+  let [species, setSpecies] = useState("")
+
   let [fetchData, updateFetchData] = useState([]);
-  // info sirve para "" y results sirve para las cards
-  let {info, results} = fetchData;
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`; //pageNimber para número de pag y search para el name
+  let { info, results } = fetchData; // info sirve para Pagination y results sirve para las cards
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`; //pageNimber para número de pag y search para el name
 
   // compromabos si los datos obtenidos ya están organizados
   // console.log(results)
 
   // necesitamos una función asincrona que se invoque de una vez, para el paginator, por eso se usará IIFE
-  useEffect(() =>{
-    (async function(){
-      let data = await fetch(api).then(res=>res.json());
+  useEffect(() => {
+    (async function () {
+      let data = await fetch(api).then(res => res.json());
       updateFetchData(data)
       // console.log(data);
     })()
-  },[api])
+  }, [api])
 
   const titlespan = {
     color: '#00b0c8',
   }
+  const imagefondo = {
+    backgroundImage: `url(${fondo})`,
+  }
 
   return (
-    <div className="App">
-      <h1 className="text-center my-5"> <span style={titlespan}>Rick & Morty</span> <span style={{ color: '#cdd845'}}>Search</span></h1>
+    <div className="App" style={imagefondo}>
+      <h1 className="text-center my-5">
+        <span style={titlespan}>Rick & Morty</span>
+        <span style={{ color: '#cdd845' }}>
+          Search</span>
+      </h1>
 
-      <Search setPageNumber={setPageNumber} setSearch={setSearch}/>
+      <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
-      <div className="container">
+      <div className="container" style={{}}>
         <div className="row">
-          <div className="col-3">
-            <Filters />
-          </div>
+          <Filters
+            setGender={setGender}
+            setStatus={setStatus}
+            setSpecies={setSpecies}
+            setPageNumber={setPageNumber}
+          />
           <div className="col-9">
             <div className="row">
               <Cards results={results} />
             </div>
           </div>
+          <div className='row'>
+            <Pagination 
+              info={info} 
+              pageNumber={pageNumber} 
+              setPageNumber={setPageNumber} 
+            />
+          </div>
         </div>
       </div>
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </div>
   );
 }
