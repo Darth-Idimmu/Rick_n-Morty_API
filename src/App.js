@@ -5,10 +5,32 @@ import Cards from "./components/Cards/Cards";
 import Filters from "./components/Filters/Filters"; // importe para filtros
 import Pagination from './components/Pagination/Pagination';
 import Search from './components/Search/Search';
+import Navbar from './components/Navbar/Navbar';
+import Episodes from './Pages/Episodes';
+import Location from './Pages/Location';
 
 import fondo from './assets/images/RM_Background_Card.png'; //imagen de fondo de App
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'; //se cambia funtion App por Const (para poder usar funciones de router)
 
-function App() {
+// creación de rutas y funtion principal
+function App(){
+  return(
+    <Router>
+      <div className='App'>
+        <Navbar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/location" element={<Location />} />
+      </Routes>
+    </Router>
+  )
+}
+
+
+// esta sección se convierte en una page y la principal es funtion App
+const Home = () => {
   // ------------------------ variables que permitirán estar en varias partes de la API para recibir info ----------------
   let [pageNumber, setPageNumber] = useState(1); // variable y función, que arranca desde la pag1
   // console.log(pageNumber)
@@ -33,20 +55,12 @@ function App() {
     })()
   }, [api])
 
-  const titlespan = {
-    color: '#00b0c8',
-  }
   const imagefondo = {
     backgroundImage: `url(${fondo})`,
   }
 
   return (
     <div className="App" style={imagefondo}>
-      <h1 className="text-center my-5">
-        <span style={titlespan}>Rick & Morty</span>
-        <span style={{ color: '#cdd845' }}>
-          Search</span>
-      </h1>
 
       <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
