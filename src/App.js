@@ -8,9 +8,11 @@ import Search from './components/Search/Search';
 import Navbar from './components/Navbar/Navbar';
 import Episodes from './Pages/Episodes';
 import Location from './Pages/Location';
+import CardDetails from './components/Cards/CardDetails';
 
 import fondo from './assets/images/RM_Background_Card.png'; //imagen de fondo de App
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'; //se cambia funtion App por Const (para poder usar funciones de router)
+
 
 // creación de rutas y funtion principal
 function App(){
@@ -21,8 +23,13 @@ function App(){
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/:id' element={<CardDetails />}/>
+
         <Route path="/episodes" element={<Episodes />} />
+        <Route path='/episodes/:id' element={<CardDetails />} />
+
         <Route path="/location" element={<Location />} />
+        <Route path='/location/:id' element={<CardDetails />} />
       </Routes>
     </Router>
   )
@@ -64,7 +71,7 @@ const Home = () => {
 
       <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
-      <div className="container" style={{}}>
+      <div className="container">
         <div className="row">
           <Filters
             setGender={setGender}
@@ -74,7 +81,7 @@ const Home = () => {
           />
           <div className="col-9">
             <div className="row">
-              <Cards results={results} />
+              <Cards page="/" results={results} />
             </div>
           </div>
           <div className='row'>

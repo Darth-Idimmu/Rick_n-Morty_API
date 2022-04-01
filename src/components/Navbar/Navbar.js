@@ -1,5 +1,4 @@
 import React from 'react';
-import './Navbar.css';
 import '../../App.css'; //otra forma de hacer estilos en jsx
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { NavLink, Link } from 'react-router-dom';

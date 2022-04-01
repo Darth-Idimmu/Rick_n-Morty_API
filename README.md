@@ -1,8 +1,11 @@
 # Consideraciones iniciales!
 
-Se instala bootstrap y poppers (librería necesaria por bootstrap)
-Por otro lado se maneja una librería llamada React-Paginate (para facilitar la paginación)
-La estructura de components está dividida en 4 (Cards, Filters, Pagination, Search)
+En cada archivo se aclara los métodos usados.\
+Se instala bootstrap y poppers (librería necesaria por bootstrap).\
+Por otro lado se maneja una librería llamada React-Paginate (para facilitar la paginación).\
+La estructura de components está dividida en (Cards, Filters, Pagination, Search, Navbar).\
+Adicionalmente para el ruteo (react-router-dom) se crean la carpeta llamada pages.
+
 
 
 # Getting Started with Create React App
