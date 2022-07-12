@@ -19,14 +19,14 @@ const Cards = ({ results, page }) => {
             // cada x necesita una identidad "key", de la api se la aportamos del id
             let { id, name, image, location, status } = x;
             return (
-                <Link 
+                <Link
                     // el to está configurado desde App, page es el location, id es el número de la x de results
-                    to={`${page}${id}`} 
-                    key={id} 
-                    className='col-md-4 card card-has-bg click-col text-dark'
-                    style={{textDecoration: 'none',}}
+                    to={`${page}${id}`}
+                    key={id}
+                    className=' card card-has-bg click-col text-dark'
+                    style={{ textDecoration: 'none', }}
                 >
-                    <div className="position-relative">
+                    <div className="position-relative d-flex flex-column justify-content-center">
                         <div>
                             <img src={image} alt='' className='img img-fluid' style={{ width: "100%" }} />
                             <div className='content' style={{ padding: "10px" }}>
