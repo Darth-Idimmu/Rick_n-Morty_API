@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/.github.io/Rick_n-Morty_API/static/css/main.a9a4bb07.css",
+    "main.js": "/.github.io/Rick_n-Morty_API/static/js/main.b1398a9e.js",
+    "static/js/787.6acb2a14.chunk.js": "/.github.io/Rick_n-Morty_API/static/js/787.6acb2a14.chunk.js",
+    "static/media/RM_Background_Card.png": "/.github.io/Rick_n-Morty_API/static/media/RM_Background_Card.84e58daa5d8798cb9ec2.png",
+    "index.html": "/.github.io/Rick_n-Morty_API/index.html",
+    "main.a9a4bb07.css.map": "/.github.io/Rick_n-Morty_API/static/css/main.a9a4bb07.css.map",
+    "main.b1398a9e.js.map": "/.github.io/Rick_n-Morty_API/static/js/main.b1398a9e.js.map",
+    "787.6acb2a14.chunk.js.map": "/.github.io/Rick_n-Morty_API/static/js/787.6acb2a14.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9a4bb07.css",
+    "static/js/main.b1398a9e.js"
+  ]
+}
