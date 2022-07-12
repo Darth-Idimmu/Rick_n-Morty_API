@@ -40,11 +40,11 @@ const Episodes = () => {
         </h5>
       </div>
       <div className='row'>
-        <div className='col-3'>
+        <div className='col-lg-3 col-12'>
           <div className='text-center fw-bold fs-4 mb-4'>Choose Episodes</div>
           <InputGroup setId={setId} name="Episode" total = {51} />
           </div>
-        <div className='col-9'>
+        <div className='col-lg col-12'>
           <div className='row'><Cards page="/episodes/" results={results} /></div>
         </div>
       </div>

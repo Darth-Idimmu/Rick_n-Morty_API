@@ -4,6 +4,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
+    // algunas constantes usadas para estilos
     const navback = {
         backgroundImage: "radial-gradient(circle, rgba(255, 132, 116, 1) 0%, rgba(34,25,51,1) 100%)",
     }
