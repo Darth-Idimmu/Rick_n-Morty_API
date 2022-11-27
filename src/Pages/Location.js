@@ -20,8 +20,9 @@ const Location = () => {
 
       // dentro de los episodios hay info de los personajes, por eso se hace esta variable y obtener dicho array
       let char = await Promise.all(
-        data.residents.map((x) => {
-          return fetch(x).then((res) => res.json())
+        data.residents.map(async (x) => {
+          const res = await fetch(x);
+          return await res.json();
         })
       );
       setResults(char);
