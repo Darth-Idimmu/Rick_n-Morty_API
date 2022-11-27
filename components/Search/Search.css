@@ -1,0 +1,20 @@
+.pad{
+    padding-top: 50px;
+}
+
+.center {
+    width: 50%;
+    margin-left: 33%;
+}
+
+.form-control {
+    border: 1px solid #00b0c8;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+/* @media (max-width: 576px){
+    .input{
+        width: 80%;
+    }
+} */
